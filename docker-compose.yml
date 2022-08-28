@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  dapp_web:
+    container_name: dapp_web
+    build: .
+    image: dapp_web:0.0.1
+    restart: unless-stopped
+    networks:
+      - proxy_net    
+
+networks:
+  proxy_net:
+    external: true
